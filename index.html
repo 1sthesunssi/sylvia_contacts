@@ -18,63 +18,36 @@
 body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 2rem 1rem; }
 .wrap { max-width: 720px; margin: 0 auto; }
 
-/* Header */
 .header { display: flex; align-items: center; gap: 14px; margin-bottom: 2rem; }
 .header-logo { width: 48px; height: 48px; background: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .header-logo svg { width: 26px; height: 26px; fill: white; }
 .header-title { font-size: 20px; font-weight: 700; letter-spacing: -0.03em; }
 .header-sub { font-size: 12px; color: var(--text3); margin-top: 2px; }
 
-/* Google Login */
-.login-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem 1rem; text-align: center; margin-bottom: 1.5rem; }
-.login-icon { font-size: 48px; margin-bottom: 1rem; }
-.login-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-.login-sub { font-size: 13px; color: var(--text3); margin-bottom: 1.5rem; }
+/* 안내 배너 */
+.info-banner { background: var(--accent-light); border: 1px solid #bfdbfe; border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: 13px; color: var(--accent-text); line-height: 1.6; }
+.info-banner strong { font-weight: 700; }
+
+/* 로그인 */
+.login-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem 1rem; text-align: center; margin-bottom: 1.5rem; }
+.login-icon { font-size: 44px; margin-bottom: 0.75rem; }
+.login-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.login-sub { font-size: 13px; color: var(--text3); margin-bottom: 1.25rem; }
 .btn-google { display: inline-flex; align-items: center; gap: 10px; background: white; border: 1px solid var(--border2); border-radius: 8px; padding: 10px 24px; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; cursor: pointer; color: var(--text); transition: background 0.2s; }
 .btn-google:hover { background: var(--surface2); }
-.btn-google svg { width: 20px; height: 20px; flex-shrink: 0; }
+.btn-google svg { width: 20px; height: 20px; }
 
-/* Logged in badge */
-.user-badge { display: none; background: var(--green-light); border: 1px solid #bbf7d0; border-radius: var(--radius); padding: 0.75rem 1.25rem; margin-bottom: 1.5rem; display: none; align-items: center; gap: 10px; }
+/* 로그인 후 배지 */
+.user-badge { display: none; background: var(--green-light); border: 1px solid #bbf7d0; border-radius: var(--radius); padding: 0.75rem 1.25rem; margin-bottom: 1.5rem; align-items: center; gap: 10px; }
 .user-badge.show { display: flex; }
 .user-avatar { width: 36px; height: 36px; border-radius: 50%; border: 2px solid #86efac; }
 .user-name { font-size: 14px; font-weight: 500; color: var(--green); }
 .user-email { font-size: 12px; color: #15803d; }
 .btn-logout { margin-left: auto; font-size: 12px; color: var(--text3); background: none; border: 1px solid var(--border2); border-radius: 6px; padding: 4px 10px; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; }
 
-/* Upload */
-.upload-zone { border: 2px dashed var(--border2); border-radius: var(--radius-lg); background: var(--surface); padding: 2rem 1rem; text-align: center; margin-bottom: 1.5rem; transition: border-color 0.2s, background 0.2s; }
-.upload-zone.drag { border-color: var(--accent); background: var(--accent-light); }
-#previewImg { max-width: 100%; max-height: 200px; border-radius: var(--radius); border: 1px solid var(--border); object-fit: contain; margin: 0 auto 1rem; display: none; }
-#previewImg.show { display: block; }
-.upload-icon { font-size: 38px; margin-bottom: 0.5rem; }
-#uploadTitle { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
-.upload-sub { font-size: 12px; color: var(--text3); margin-bottom: 1.25rem; }
-.upload-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.btn-file { background: var(--surface2); color: var(--text2); border: 1px solid var(--border2); border-radius: 8px; padding: 9px 22px; font-size: 13px; font-family: 'Noto Sans KR', sans-serif; cursor: pointer; font-weight: 500; }
-.btn-file:hover { background: var(--border); }
-.btn-paste { background: var(--accent-light); color: var(--accent-text); border: 1px solid #bfdbfe; border-radius: 8px; padding: 9px 22px; font-size: 13px; font-family: 'Noto Sans KR', sans-serif; cursor: pointer; font-weight: 500; }
-.btn-paste:hover { background: #dbeafe; }
-
-/* Buttons */
-.btn-extract { width: 100%; background: var(--accent); color: white; border: none; border-radius: var(--radius); padding: 14px; font-size: 15px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; cursor: pointer; margin-bottom: 1.5rem; transition: opacity 0.2s; }
-.btn-extract:hover { opacity: 0.88; }
-.btn-extract:disabled { opacity: 0.4; cursor: not-allowed; }
-
-/* Loading */
-.loading { text-align: center; padding: 1.5rem; display: none; color: var(--text2); font-size: 14px; }
-.loading.show { display: block; }
-.spinner { display: inline-block; width: 22px; height: 22px; border: 2.5px solid #ddd; border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 8px; }
-@keyframes spin { to { transform: rotate(360deg); } }
-#loadingMsg { font-size: 13px; color: var(--text3); margin-top: 4px; }
-
-/* Result card */
-.result-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem; display: none; }
-.result-card.show { display: block; }
-.result-header { padding: 1rem 1.25rem; background: var(--surface2); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-.avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; flex-shrink: 0; }
-.result-name { font-size: 16px; font-weight: 700; }
-.result-sub { font-size: 12px; color: var(--text3); margin-top: 2px; }
+/* 입력 폼 */
+.form-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem; }
+.form-header { padding: 1rem 1.25rem; background: var(--surface2); border-bottom: 1px solid var(--border); font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
 .field-grid { display: grid; grid-template-columns: 1fr 1fr; }
 .field-item { padding: 0.75rem 1.25rem; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
 .field-item:nth-child(even) { border-right: none; }
@@ -82,6 +55,8 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
 .field-label { font-size: 11px; color: var(--text3); font-weight: 500; letter-spacing: 0.04em; margin-bottom: 3px; }
 .field-input { width: 100%; border: none; outline: none; font-family: 'Noto Sans KR', sans-serif; font-size: 13px; color: var(--text); background: transparent; }
 .field-input:focus { background: #f0f7ff; border-radius: 4px; padding: 1px 5px; }
+
+/* 차량 */
 .cars-section { padding: 0.75rem 1.25rem; border-bottom: 1px solid var(--border); }
 .cars-label { font-size: 11px; color: var(--text3); font-weight: 500; letter-spacing: 0.04em; margin-bottom: 8px; }
 .car-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 6px; margin-bottom: 6px; align-items: center; }
@@ -89,24 +64,34 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
 .car-input:focus { border-color: var(--accent); background: white; }
 .btn-del { width: 26px; height: 26px; border: 1px solid var(--border2); border-radius: 6px; background: white; cursor: pointer; font-size: 13px; color: var(--text3); }
 .btn-add-car { font-size: 12px; color: var(--accent-text); background: none; border: none; cursor: pointer; margin-top: 4px; font-family: 'Noto Sans KR', sans-serif; }
+
+/* 메모 */
 .memo-section { padding: 0.75rem 1.25rem; }
 .memo-label { font-size: 11px; color: var(--text3); font-weight: 500; letter-spacing: 0.04em; margin-bottom: 6px; }
 .memo-input { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; font-size: 12px; font-family: 'Noto Sans KR', sans-serif; color: var(--text); background: var(--bg); resize: vertical; min-height: 60px; outline: none; }
 .memo-input:focus { border-color: var(--accent); background: white; }
 
-/* Register button */
-.btn-register { width: 100%; background: var(--green); color: white; border: none; border-radius: var(--radius); padding: 14px; font-size: 15px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; cursor: pointer; margin-bottom: 1rem; transition: opacity 0.2s; display: none; }
-.btn-register.show { display: block; }
+/* 버튼 */
+.btn-register { width: 100%; background: var(--green); color: white; border: none; border-radius: var(--radius); padding: 14px; font-size: 15px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; cursor: pointer; margin-bottom: 1rem; transition: opacity 0.2s; }
 .btn-register:hover { opacity: 0.88; }
+.btn-clear { width: 100%; background: var(--surface2); color: var(--text2); border: 1px solid var(--border2); border-radius: var(--radius); padding: 11px; font-size: 14px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; cursor: pointer; margin-bottom: 1.5rem; }
+.btn-clear:hover { background: var(--border); }
 
-/* Success */
-.success-card { background: var(--green-light); border: 1px solid #bbf7d0; border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem; display: none; text-align: center; }
+/* 로딩 */
+.loading { text-align: center; padding: 1rem; display: none; color: var(--text2); font-size: 14px; }
+.loading.show { display: block; }
+.spinner { display: inline-block; width: 20px; height: 20px; border: 2.5px solid #ddd; border-top-color: var(--green); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 8px; vertical-align: middle; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* 성공 */
+.success-card { background: var(--green-light); border: 1px solid #bbf7d0; border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.5rem; display: none; text-align: center; }
 .success-card.show { display: block; }
-.success-card .icon { font-size: 32px; margin-bottom: 6px; }
-.success-card .msg { font-size: 14px; font-weight: 500; color: var(--green); }
-.success-card .sub { font-size: 12px; color: #15803d; margin-top: 4px; }
+.success-icon { font-size: 36px; margin-bottom: 8px; }
+.success-msg { font-size: 15px; font-weight: 700; color: var(--green); margin-bottom: 4px; }
+.success-sub { font-size: 12px; color: #15803d; }
+.btn-contacts { display: inline-block; margin-top: 12px; background: var(--green); color: white; border-radius: 8px; padding: 8px 20px; font-size: 13px; font-weight: 500; text-decoration: none; font-family: 'Noto Sans KR', sans-serif; }
 
-/* Toast */
+/* 토스트 */
 .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(120px); background: #1a1916; color: white; padding: 10px 22px; border-radius: 30px; font-size: 13px; font-weight: 500; transition: transform 0.3s; z-index: 999; white-space: nowrap; }
 .toast.show { transform: translateX(-50%) translateY(0); }
 .footer { text-align: center; font-size: 11px; color: var(--text3); padding: 1rem 0 0.5rem; }
@@ -127,8 +112,12 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
     </div>
     <div>
       <div class="header-title">고객정보 → 구글 주소록</div>
-      <div class="header-sub">실비아 보험이야기 | 이미지 → AI 추출 → 자동 등록</div>
+      <div class="header-sub">실비아 보험이야기 | 입력 → 구글 주소록 자동 등록</div>
     </div>
+  </div>
+
+  <div class="info-banner">
+    📋 <strong>사용 방법:</strong> Claude 채팅에 고객 CRM 이미지를 보내주시면 → Claude가 정보를 추출해서 알려드려요 → 아래 입력란에 붙여넣기 → <strong>구글 주소록에 바로 등록!</strong>
   </div>
 
   <!-- 로그인 전 -->
@@ -142,7 +131,7 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
     </button>
   </div>
 
-  <!-- 로그인 후 사용자 정보 -->
+  <!-- 로그인 후 -->
   <div class="user-badge" id="userBadge">
     <img class="user-avatar" id="userAvatar" src="" alt="프로필" />
     <div>
@@ -152,47 +141,20 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
     <button class="btn-logout" id="btnLogout">로그아웃</button>
   </div>
 
-  <!-- 이미지 업로드 -->
-  <div class="upload-zone" id="uploadZone">
-    <input type="file" id="fileInput" accept="image/*" style="display:none;" />
-    <img id="previewImg" alt="미리보기" />
-    <div class="upload-icon" id="uploadIcon">📋</div>
-    <div id="uploadTitle">고객 정보 이미지를 올려주세요</div>
-    <div class="upload-sub">드래그하거나 아래 버튼으로 이미지를 올려주세요</div>
-    <div class="upload-btns">
-      <button class="btn-file" id="btnFile">📁 파일 선택</button>
-      <button class="btn-paste" id="btnPaste">📋 클립보드 붙여넣기</button>
-    </div>
-  </div>
-
-  <!-- AI 추출 버튼 -->
-  <button class="btn-extract" id="btnExtract" disabled>✨ AI로 고객 정보 자동 추출</button>
-
-  <!-- 로딩 -->
-  <div class="loading" id="loading">
-    <div class="spinner"></div>
-    <div id="loadingMsg">처리 중...</div>
-  </div>
-
-  <!-- 추출 결과 -->
-  <div class="result-card" id="resultCard">
-    <div class="result-header">
-      <div class="avatar" id="avatarEl">?</div>
-      <div>
-        <div class="result-name" id="resultName">—</div>
-        <div class="result-sub">추출 완료 · 수정 후 등록하세요</div>
-      </div>
-    </div>
+  <!-- 입력 폼 -->
+  <div class="form-card">
+    <div class="form-header">📝 고객 정보 입력</div>
     <div class="field-grid">
-      <div class="field-item"><div class="field-label">이름</div><input class="field-input" id="r-name" type="text" /></div>
-      <div class="field-item"><div class="field-label">휴대폰</div><input class="field-input" id="r-phone" type="text" /></div>
+      <div class="field-item"><div class="field-label">이름 *</div><input class="field-input" id="r-name" type="text" placeholder="홍길동" /></div>
+      <div class="field-item"><div class="field-label">휴대폰</div><input class="field-input" id="r-phone" type="text" placeholder="010-0000-0000" /></div>
       <div class="field-item"><div class="field-label">생년월일</div><input class="field-input" id="r-birth" type="text" placeholder="YYYY-MM-DD" /></div>
-      <div class="field-item"><div class="field-label">성별</div><input class="field-input" id="r-gender" type="text" /></div>
-      <div class="field-item full"><div class="field-label">주소</div><input class="field-input" id="r-addr" type="text" /></div>
-      <div class="field-item"><div class="field-label">직업</div><input class="field-input" id="r-job" type="text" /></div>
-      <div class="field-item"><div class="field-label">이메일</div><input class="field-input" id="r-email" type="text" /></div>
-      <div class="field-item"><div class="field-label">배우자</div><input class="field-input" id="r-spouse" type="text" /></div>
+      <div class="field-item"><div class="field-label">성별</div><input class="field-input" id="r-gender" type="text" placeholder="남/여" /></div>
+      <div class="field-item full"><div class="field-label">주소</div><input class="field-input" id="r-addr" type="text" placeholder="서울시 ..." /></div>
+      <div class="field-item"><div class="field-label">직업</div><input class="field-input" id="r-job" type="text" placeholder="직업" /></div>
+      <div class="field-item"><div class="field-label">이메일</div><input class="field-input" id="r-email" type="text" placeholder="email@example.com" /></div>
+      <div class="field-item"><div class="field-label">배우자</div><input class="field-input" id="r-spouse" type="text" placeholder="배우자 이름" /></div>
       <div class="field-item"><div class="field-label">상령일</div><input class="field-input" id="r-anniversary" type="text" placeholder="MM-DD" /></div>
+      <div class="field-item"><div class="field-label">주민번호 앞자리</div><input class="field-input" id="r-ssn" type="text" placeholder="YYMMDD" /></div>
     </div>
     <div class="cars-section">
       <div class="cars-label">차량 정보</div>
@@ -200,96 +162,74 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
       <button class="btn-add-car" id="btnAddCar">+ 차량 추가</button>
     </div>
     <div class="memo-section">
-      <div class="memo-label">메모</div>
+      <div class="memo-label">메모 (특이사항)</div>
       <textarea class="memo-input" id="r-memo" placeholder="특이사항..."></textarea>
     </div>
   </div>
 
-  <!-- 구글 주소록 등록 버튼 -->
-  <button class="btn-register" id="btnRegister">📒 구글 주소록에 바로 등록</button>
-
-  <!-- 성공 메시지 -->
-  <div class="success-card" id="successCard">
-    <div class="icon">✅</div>
-    <div class="msg" id="successMsg">구글 주소록에 등록 완료!</div>
-    <div class="sub" id="successSub"></div>
+  <div class="loading" id="loading">
+    <span class="spinner"></span>구글 주소록에 등록하는 중...
   </div>
 
-  <!-- API Key 설정 (접기) -->
-  <details style="margin-bottom:1.5rem;">
-    <summary style="font-size:12px;color:var(--text3);cursor:pointer;padding:0.5rem 0;">⚙️ Anthropic API Key 설정</summary>
-    <div style="margin-top:0.75rem;background:var(--accent-light);border:1px solid #bfdbfe;border-radius:var(--radius);padding:1rem 1.25rem;">
-      <label style="font-size:12px;color:var(--accent-text);font-weight:500;display:block;margin-bottom:4px;">API Key</label>
-      <input type="password" id="apiKey" placeholder="sk-ant-api03-..." style="width:100%;font-family:'DM Mono',monospace;font-size:13px;border:1px solid #bfdbfe;border-radius:6px;padding:6px 10px;background:white;color:var(--text);outline:none;" autocomplete="off" />
-      <div style="font-size:11px;color:var(--accent-text);margin-top:6px;">console.anthropic.com 에서 발급 · 입력값은 브라우저에만 저장됩니다</div>
-    </div>
-  </details>
+  <button class="btn-register" id="btnRegister">📒 구글 주소록에 바로 등록</button>
+  <button class="btn-clear" id="btnClear">🗑 입력 초기화</button>
+
+  <div class="success-card" id="successCard">
+    <div class="success-icon">✅</div>
+    <div class="success-msg" id="successMsg"></div>
+    <div class="success-sub">구글 주소록에 등록되었어요!</div>
+    <a class="btn-contacts" href="https://contacts.google.com" target="_blank">구글 주소록에서 확인</a>
+  </div>
 
   <div class="footer">실비아 보험이야기 · DB손해보험 전속 보험설계사 · Made with Claude AI</div>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<!-- Google Identity Services -->
 <script src="https://accounts.google.com/gsi/client" async></script>
-
 <script>
 (function () {
   'use strict';
 
-  // ── 설정 (본인 클라이언트 ID로 교체됨)
   var GOOGLE_CLIENT_ID = '764093978922-9g61l63fd0kt78l7889h49amb73rk4b1.apps.googleusercontent.com';
-  var SCOPES = 'https://www.googleapis.com/auth/contacts';
-
+  var SCOPES = 'https://www.googleapis.com/auth/contacts https://www.googleapis.com/auth/userinfo.profile';
   var accessToken = null;
-  var imageBase64 = null;
-  var imageMime = 'image/png';
 
-  // ── DOM
-  var loginCard   = document.getElementById('loginCard');
-  var userBadge   = document.getElementById('userBadge');
-  var btnLogin    = document.getElementById('btnLogin');
-  var btnLogout   = document.getElementById('btnLogout');
-  var fileInput   = document.getElementById('fileInput');
-  var btnFile     = document.getElementById('btnFile');
-  var btnPaste    = document.getElementById('btnPaste');
-  var btnExtract  = document.getElementById('btnExtract');
-  var btnRegister = document.getElementById('btnRegister');
-  var btnAddCar   = document.getElementById('btnAddCar');
-  var uploadZone  = document.getElementById('uploadZone');
-  var previewImg  = document.getElementById('previewImg');
-  var uploadIcon  = document.getElementById('uploadIcon');
-  var uploadTitle = document.getElementById('uploadTitle');
+  var loginCard  = document.getElementById('loginCard');
+  var userBadge  = document.getElementById('userBadge');
+  var btnLogin   = document.getElementById('btnLogin');
+  var btnLogout  = document.getElementById('btnLogout');
+  var btnRegister= document.getElementById('btnRegister');
+  var btnClear   = document.getElementById('btnClear');
+  var btnAddCar  = document.getElementById('btnAddCar');
 
-  // ── Google OAuth 로그인
+  // 초기 차량 행 1개
+  addCar('', '', '');
+
+  // ── 구글 로그인
   btnLogin.addEventListener('click', function () {
-    if (typeof google === 'undefined') {
-      toast('구글 스크립트 로딩 중... 잠시 후 다시 눌러주세요.');
-      return;
-    }
-    var client = google.accounts.oauth2.initTokenClient({
+    if (typeof google === 'undefined') { toast('잠시 후 다시 눌러주세요.'); return; }
+    google.accounts.oauth2.initTokenClient({
       client_id: GOOGLE_CLIENT_ID,
       scope: SCOPES,
       callback: function (resp) {
         if (resp.error) { toast('로그인 실패: ' + resp.error); return; }
         accessToken = resp.access_token;
-        fetchUserInfo();
+        fetchUser();
       }
-    });
-    client.requestAccessToken();
+    }).requestAccessToken();
   });
 
-  function fetchUserInfo() {
+  function fetchUser() {
     fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
       headers: { Authorization: 'Bearer ' + accessToken }
     }).then(function (r) { return r.json(); }).then(function (u) {
       document.getElementById('userName').textContent  = u.name || '';
       document.getElementById('userEmail').textContent = u.email || '';
-      var av = document.getElementById('userAvatar');
-      if (u.picture) av.src = u.picture;
+      if (u.picture) document.getElementById('userAvatar').src = u.picture;
       loginCard.style.display = 'none';
       userBadge.classList.add('show');
-      toast('✅ 로그인 완료! 이미지를 올려주세요.');
+      toast('✅ 로그인 완료!');
     });
   }
 
@@ -300,203 +240,83 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
     toast('로그아웃 되었습니다.');
   });
 
-  // ── 파일 선택
-  btnFile.addEventListener('click', function () { fileInput.value = ''; fileInput.click(); });
-  fileInput.addEventListener('change', function () {
-    var f = fileInput.files[0];
-    if (f) readBlob(f, f.type || 'image/png', f.name);
-  });
-
-  // ── 드래그 앤 드롭
-  uploadZone.addEventListener('dragover', function (e) { e.preventDefault(); uploadZone.classList.add('drag'); });
-  uploadZone.addEventListener('dragleave', function () { uploadZone.classList.remove('drag'); });
-  uploadZone.addEventListener('drop', function (e) {
-    e.preventDefault(); uploadZone.classList.remove('drag');
-    var f = e.dataTransfer.files[0];
-    if (f && f.type.startsWith('image/')) readBlob(f, f.type, f.name);
-    else toast('이미지 파일만 지원됩니다.');
-  });
-
-  // ── 클립보드 버튼
-  btnPaste.addEventListener('click', function () {
-    if (!navigator.clipboard || !navigator.clipboard.read) {
-      toast('Ctrl+V 를 눌러주세요.');
-      return;
-    }
-    navigator.clipboard.read().then(function (items) {
-      var found = false;
-      items.forEach(function (item) {
-        var t = item.types.find(function (x) { return x.startsWith('image/'); });
-        if (t && !found) {
-          found = true;
-          item.getType(t).then(function (blob) { readBlob(blob, t, '클립보드 이미지'); toast('📋 클립보드 이미지 붙여넣기 완료!'); });
-        }
-      });
-      if (!found) toast('클립보드에 이미지가 없어요.');
-    }).catch(function () { toast('Ctrl+V 를 눌러주세요.'); });
-  });
-
-  // ── Ctrl+V
-  document.addEventListener('paste', function (e) {
-    var items = (e.clipboardData || {}).items || [];
-    for (var i = 0; i < items.length; i++) {
-      if (items[i].type.startsWith('image/')) {
-        e.preventDefault();
-        var blob = items[i].getAsFile();
-        if (blob) { readBlob(blob, items[i].type, '클립보드 이미지'); toast('📋 Ctrl+V 붙여넣기 완료!'); }
-        break;
-      }
-    }
-  });
-
-  function readBlob(blob, mime, name) {
-    imageMime = mime || 'image/png';
-    var reader = new FileReader();
-    reader.onload = function (ev) {
-      imageBase64 = ev.target.result.split(',')[1];
-      previewImg.src = ev.target.result;
-      previewImg.classList.add('show');
-      uploadIcon.style.display = 'none';
-      uploadTitle.textContent = name || '이미지 로드 완료';
-      btnExtract.disabled = false;
-    };
-    reader.onerror = function () { toast('이미지를 읽을 수 없어요.'); };
-    reader.readAsDataURL(blob);
-  }
-
-  // ── AI 추출
-  btnExtract.addEventListener('click', extractInfo);
-  async function extractInfo() {
-    var apiKey = document.getElementById('apiKey').value.trim();
-    if (!apiKey)      { toast('⚙️ 아래 API Key 설정을 펼쳐서 입력해주세요!'); return; }
-    if (!imageBase64) { toast('이미지를 먼저 올려주세요!'); return; }
-
-    setLoading(true, 'AI가 이미지를 분석하고 있어요...');
-    btnExtract.disabled = true;
-
-    var prompt = '이 이미지는 보험사 CRM 고객 정보 화면입니다. 다음 정보를 JSON으로 추출해주세요.\n반드시 JSON만 반환하고, 다른 설명 없이 아래 형식만 출력하세요:\n{\n  "name": "이름",\n  "phone": "휴대폰번호 (010-xxxx-xxxx 형식)",\n  "birth": "생년월일 (YYYY-MM-DD)",\n  "gender": "남 또는 여",\n  "address": "주소",\n  "job": "직업",\n  "email": "이메일 (없으면 빈 문자열)",\n  "spouse": "배우자 이름 (없으면 빈 문자열)",\n  "anniversary": "상령일 (MM-DD 형식, 없으면 빈 문자열)",\n  "ssn_prefix": "주민등록번호 앞 6자리 (없으면 빈 문자열)",\n  "cars": [\n    { "number": "차량번호", "expiry": "만기일 YYYY-MM-DD", "insurer": "보험사" }\n  ],\n  "memo": "메모/특이사항 (없으면 빈 문자열)"\n}';
-
-    try {
-      var res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-direct-browser-calls': 'true'
-        },
-        body: JSON.stringify({
-          model: 'claude-opus-4-5',
-          max_tokens: 1000,
-          messages: [{ role: 'user', content: [
-            { type: 'image', source: { type: 'base64', media_type: imageMime, data: imageBase64 } },
-            { type: 'text', text: prompt }
-          ]}]
-        })
-      });
-      var data = await res.json();
-      if (data.error) throw new Error(data.error.message);
-      var info = JSON.parse(data.content[0].text.trim().replace(/```json|```/g, '').trim());
-      fillForm(info);
-    } catch (err) {
-      toast('오류: ' + err.message);
-      console.error(err);
-    } finally {
-      setLoading(false);
-      btnExtract.disabled = false;
-    }
-  }
-
-  function fillForm(d) {
-    document.getElementById('r-name').value        = d.name || '';
-    document.getElementById('r-phone').value       = d.phone || '';
-    document.getElementById('r-birth').value       = d.birth || '';
-    document.getElementById('r-gender').value      = d.gender || '';
-    document.getElementById('r-addr').value        = d.address || '';
-    document.getElementById('r-job').value         = d.job || '';
-    document.getElementById('r-email').value       = d.email || '';
-    document.getElementById('r-spouse').value      = d.spouse || '';
-    document.getElementById('r-anniversary').value = d.anniversary || '';
-    var memo = d.memo || '';
-    if (d.ssn_prefix) memo += (memo ? '\n' : '') + '주민등록번호 앞자리: ' + d.ssn_prefix;
-    document.getElementById('r-memo').value = memo;
-    var name = d.name || '?';
-    document.getElementById('resultName').textContent = name;
-    document.getElementById('avatarEl').textContent   = name.slice(0, 1);
-    document.getElementById('carList').innerHTML = '';
-    var cars = (d.cars && d.cars.length) ? d.cars : [{ number: '', expiry: '', insurer: '' }];
-    cars.forEach(function (c) { addCar(c.number || '', c.expiry || '', c.insurer || ''); });
-    document.getElementById('resultCard').classList.add('show');
-    btnRegister.classList.add('show');
-    document.getElementById('successCard').classList.remove('show');
-    toast('✅ 정보 추출 완료! 확인 후 등록하세요.');
-  }
-
-  // ── 구글 주소록 등록
+  // ── 등록
   btnRegister.addEventListener('click', registerContact);
+
   async function registerContact() {
     if (!accessToken) { toast('먼저 구글 계정으로 로그인해주세요!'); return; }
+    var name   = document.getElementById('r-name').value.trim();
+    if (!name) { toast('이름은 필수입니다!'); document.getElementById('r-name').focus(); return; }
 
-    var name    = document.getElementById('r-name').value || '';
-    var phone   = document.getElementById('r-phone').value || '';
-    var birth   = document.getElementById('r-birth').value || '';
-    var addr    = document.getElementById('r-addr').value || '';
-    var job     = document.getElementById('r-job').value || '';
-    var email   = document.getElementById('r-email').value || '';
-    var spouse  = document.getElementById('r-spouse').value || '';
-    var anniv   = document.getElementById('r-anniversary').value || '';
-    var memo    = document.getElementById('r-memo').value || '';
+    var phone  = document.getElementById('r-phone').value.trim();
+    var birth  = document.getElementById('r-birth').value.trim();
+    var addr   = document.getElementById('r-addr').value.trim();
+    var job    = document.getElementById('r-job').value.trim();
+    var email  = document.getElementById('r-email').value.trim();
+    var spouse = document.getElementById('r-spouse').value.trim();
+    var anniv  = document.getElementById('r-anniversary').value.trim();
+    var ssn    = document.getElementById('r-ssn').value.trim();
+    var memo   = document.getElementById('r-memo').value.trim();
 
     var cars = Array.from(document.querySelectorAll('#carList .car-row')).map(function (row) {
       var inp = row.querySelectorAll('input');
-      return { number: inp[0].value, expiry: inp[1].value, insurer: inp[2].value };
+      return { number: inp[0].value.trim(), expiry: inp[1].value.trim(), insurer: inp[2].value.trim() };
     }).filter(function (c) { return c.number; });
 
-    var carNote = cars.map(function (c) { return '차량: ' + c.number + ' / 만기: ' + c.expiry + ' / ' + c.insurer; }).join('\n');
-    var fullNote = [memo, spouse ? '배우자: ' + spouse : '', anniv ? '상령일: ' + anniv : '', carNote].filter(Boolean).join('\n');
+    // 메모 조합
+    var notes = [];
+    if (memo)   notes.push(memo);
+    if (spouse) notes.push('배우자: ' + spouse);
+    if (anniv)  notes.push('상령일: ' + anniv);
+    if (ssn)    notes.push('주민번호 앞자리: ' + ssn);
+    cars.forEach(function (c) { notes.push('차량: ' + c.number + ' / 만기: ' + c.expiry + ' / ' + c.insurer); });
 
-    var body = { names: [{ givenName: name.slice(1), familyName: name.slice(0, 1) }] };
-    if (phone)     body.phoneNumbers  = [{ value: phone, type: 'mobile' }];
-    if (email)     body.emailAddresses = [{ value: email }];
-    if (addr)      body.addresses     = [{ streetAddress: addr, type: 'home' }];
-    if (job)       body.organizations = [{ name: job, type: 'work' }];
-    if (birth)     body.birthdays     = [{ date: parseBirth(birth), text: birth }];
-    if (fullNote)  body.biographies   = [{ value: fullNote, contentType: 'TEXT_PLAIN' }];
+    var body = {
+      names: [{ givenName: name.length > 1 ? name.slice(1) : name, familyName: name.slice(0, 1) }]
+    };
+    if (phone)        body.phoneNumbers   = [{ value: phone, type: 'mobile' }];
+    if (email)        body.emailAddresses = [{ value: email }];
+    if (addr)         body.addresses      = [{ streetAddress: addr, type: 'home' }];
+    if (job)          body.organizations  = [{ name: job, type: 'work' }];
+    if (notes.length) body.biographies    = [{ value: notes.join('\n'), contentType: 'TEXT_PLAIN' }];
+    if (birth) {
+      var p = birth.split('-');
+      if (p.length === 3) body.birthdays = [{ date: { year: +p[0], month: +p[1], day: +p[2] }, text: birth }];
+    }
 
-    setLoading(true, '구글 주소록에 등록하는 중...');
+    document.getElementById('loading').classList.add('show');
     btnRegister.disabled = true;
 
     try {
       var res = await fetch('https://people.googleapis.com/v1/people:createContact', {
         method: 'POST',
-        headers: {
-          'Authorization': 'Bearer ' + accessToken,
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Authorization': 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       });
       var data = await res.json();
       if (data.error) throw new Error(data.error.message);
 
-      var sc = document.getElementById('successCard');
-      document.getElementById('successMsg').textContent = '✅ ' + name + ' 님이 구글 주소록에 등록되었어요!';
-      document.getElementById('successSub').textContent = 'contacts.google.com 에서 확인하세요.';
-      sc.classList.add('show');
-      btnRegister.classList.remove('show');
-      toast('🎉 등록 완료!');
+      document.getElementById('successMsg').textContent = name + ' 님 등록 완료!';
+      document.getElementById('successCard').classList.add('show');
+      toast('🎉 ' + name + ' 님이 구글 주소록에 등록되었어요!');
+      clearForm();
     } catch (err) {
       toast('등록 실패: ' + err.message);
       console.error(err);
     } finally {
-      setLoading(false);
+      document.getElementById('loading').classList.remove('show');
       btnRegister.disabled = false;
     }
   }
 
-  function parseBirth(s) {
-    var p = s.split('-');
-    if (p.length === 3) return { year: parseInt(p[0]), month: parseInt(p[1]), day: parseInt(p[2]) };
-    return {};
+  // ── 초기화
+  btnClear.addEventListener('click', function () { clearForm(); toast('초기화 되었습니다.'); });
+  function clearForm() {
+    ['r-name','r-phone','r-birth','r-gender','r-addr','r-job','r-email','r-spouse','r-anniversary','r-ssn','r-memo'].forEach(function (id) {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('carList').innerHTML = '';
+    addCar('', '', '');
   }
 
   // ── 차량
@@ -506,7 +326,7 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
     row.className = 'car-row';
     row.innerHTML =
       '<input class="car-input" type="text" placeholder="차량번호" value="' + esc(num) + '" />' +
-      '<input class="car-input" type="text" placeholder="만기일" value="' + esc(expiry) + '" />' +
+      '<input class="car-input" type="text" placeholder="만기일 YYYY-MM-DD" value="' + esc(expiry) + '" />' +
       '<input class="car-input" type="text" placeholder="보험사" value="' + esc(insurer) + '" />' +
       '<button class="btn-del" title="삭제">✕</button>';
     row.querySelector('.btn-del').addEventListener('click', function () { row.remove(); });
@@ -514,18 +334,12 @@ body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: va
   }
 
   function esc(s) { return String(s || '').replace(/"/g, '&quot;'); }
-  function setLoading(on, msg) {
-    var el = document.getElementById('loading');
-    el.classList.toggle('show', on);
-    if (msg) document.getElementById('loadingMsg').textContent = msg;
-  }
   function toast(msg) {
     var el = document.getElementById('toast');
     el.textContent = msg;
     el.classList.add('show');
     setTimeout(function () { el.classList.remove('show'); }, 3500);
   }
-
 })();
 </script>
 </body>
